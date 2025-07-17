@@ -3,6 +3,8 @@ import queue
 import threading
 import time
 import sys
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # GUI imports - only if not running in headless mode
 try:
