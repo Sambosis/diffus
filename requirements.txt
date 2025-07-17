@@ -1,0 +1,11 @@
+# PyTorch for the neural network model
+torch
+
+# Hugging Face datasets for data loading
+datasets
+
+# Hugging Face tokenizers for BPE tokenizer
+tokenizers
+
+# Matplotlib for plotting the training loss
+matplotlib
