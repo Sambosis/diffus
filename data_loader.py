@@ -52,7 +52,7 @@ def get_tokenizer() -> Tokenizer:
             dataset_subset = dataset_stream.take(config.TOKENIZER_TRAIN_SAMPLE_SIZE)
             for example in dataset_subset:
                 # The trainer expects an iterator of text strings
-                yield example['text']
+                yield example[config.DATASET_TEXT_COLUMN]
 
         # Train the tokenizer
         print(f"Training tokenizer on {config.TOKENIZER_TRAIN_SAMPLE_SIZE} samples...")
@@ -123,7 +123,7 @@ class TinyStoriesTextDataset(Dataset):
                                      This format is compatible with the default collate_fn and
                                      makes batch access in the trainer cleaner (batch['input_ids']).
         """
-        text = self.dataset[idx]['text']
+        text = self.dataset[idx][config.DATASET_TEXT_COLUMN]
 
         # The tokenizer handles truncation and padding automatically based on the
         # configuration set in get_tokenizer().

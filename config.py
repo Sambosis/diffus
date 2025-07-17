@@ -11,7 +11,9 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # --- Data and Tokenizer Configuration ---
 # The Hugging Face dataset to use
-DATASET_NAME = "roneneldan/TinyStories"
+DATASET_NAME = "imdb"
+# The name of the column in the dataset that contains the text to be trained on.
+DATASET_TEXT_COLUMN = "text"
 # The number of text samples to use for training the BPE tokenizer.
 # A smaller number speeds up initialization.
 TOKENIZER_TRAIN_SAMPLE_SIZE = 20000
